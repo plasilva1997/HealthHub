@@ -10,7 +10,7 @@ In order to be able to run the application on your workstation, you must install
   
 ### Installation
 #### Ionic
-  1. [Downdload](https://ionicframework.com/docs/intro/cli)
+  1. [Download](https://ionicframework.com/docs/intro/cli)
   
   
   
