@@ -24,5 +24,3 @@ For detailed explanation on how things work, check out [Ionic Docs](https://ioni
 ## Contributors
 
 [Victor Clarke](https://github.com/Greugreu)
-
-
