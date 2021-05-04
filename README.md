@@ -24,4 +24,7 @@ For detailed explanation on how things work, check out [Ionic Docs](https://ioni
 ## Contributors
 
 [Victor Clarke](https://github.com/Greugreu)
+
 [Yann Pocher](https://github.com/poherYann)
+
+[Benjamin Plesant](https://github.com/bplesant)
