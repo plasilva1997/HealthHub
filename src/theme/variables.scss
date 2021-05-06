@@ -1,8 +1,22 @@
+@font-face{
+  font-family: Junge sans-serif;
+  src: url("../assets/fonts/Junge-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+*{
+  color: #FAFBEE;
+}
+
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
 :root {
+
+  --ion-font-family: 'Junge', sans-serif;
+  font-family: var(--ion-font-family) !important;
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;

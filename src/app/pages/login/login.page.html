@@ -1,6 +1,29 @@
 <ion-content>
-  <app-wave></app-wave>
 
+  <app-wave></app-wave>
   <app-logo></app-logo>
 
+  <div class="pannel">
+    <div class="title-h1">
+      <ion-text>
+        <h1 class="title-h1-resp">Heureux de vous revoir</h1>
+      </ion-text>
+    </div>
+
+    <div class="form">
+      <ion-item>
+        <ion-label position="floating">Identifiant</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+      <p class="password-missing">Mot de passe oublié ?</p>
+
+      <app-btn-log-res></app-btn-log-res>
+    </div>
+  </div>
 </ion-content>
