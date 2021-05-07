@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import {WaveComponent} from '../components/wave/wave.component';
 import {LogoComponent} from '../components/logo/logo.component';
-import {BtnLogResComponent} from '../components/btn-log-res/btn-log-res.component';
-import {IonicModule} from "@ionic/angular";
+import {IonicModule} from '@ionic/angular';
+import {RouterModule} from '@angular/router';
+
 
 const contents = [
   WaveComponent,
-  LogoComponent,
-  BtnLogResComponent
+  LogoComponent
 ];
 
 @NgModule({
@@ -17,6 +17,7 @@ const contents = [
   imports: [
     CommonModule,
     IonicModule,
+    RouterModule
   ],
   exports: contents,
 })

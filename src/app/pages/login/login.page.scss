@@ -28,6 +28,8 @@ ion-item:focus{
   margin-top: 5vh;
   text-align: right;
   text-transform: uppercase;
+  font-size: 0.7rem;
+
 }
 
 
@@ -41,7 +43,7 @@ ion-item:focus{
   }
 
   .password-missing{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     margin-top: 5vh;
 
   }
@@ -58,4 +60,81 @@ ion-item:focus{
 @media screen and (min-width: 375px) {
 
 }
+
+
+//BTN Login and Register
+
+.btn-component{
+  position: fixed;
+  bottom: 5vh;
+  left: 50px;
+  right: 50px;
+}
+
+.btn-bg-bgcolor{
+  height: 5vh;
+  margin-top: 5vh;
+  background: #088BBF !important;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.btn-bg-bgcolor:hover{
+  background: #045879 !important;
+  transition: 0.5s;
+}
+
+.optionbtn{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-option{
+  color: white;
+  font-size: 0.8rem;
+}
+
+.row-option{
+  background: #088bbf50;
+  width: 40%;
+  height: 2px;
+}
+
+.btn-bg-trans{
+  height: 5vh;
+  border-radius: 5px;
+  background: transparent !important;
+  border: 2px solid #088BBF;
+  transition: 0.5s;
+}
+
+.btn-bg-trans:hover{
+  background: transparent !important;
+  border: 2px solid #045879;
+  transition: 0.5s;
+}
+
+//iphone 5
+
+@media screen and (max-width: 320px) {
+  .btn-bg-bgcolor{
+    height: 5vh;
+    margin-top: 3vh;
+    background: #088BBF !important;
+    transition: 0.5s;
+    border-radius: 5px;
+  }
+
+  .btn-bg-trans{
+    height: 5vh;
+    border-radius: 3px;
+    background: transparent !important;
+    border: 2px solid #088BBF;
+    transition: 0.5s;
+  }
+
+}
+
 
