@@ -1,16 +1,21 @@
 <ion-content>
+  <app-wave></app-wave>
   <ion-grid>
-    <ion-row>
-      <ion-col class="gender" size="6">
-        <div class="box-img">
-
-        </div>
-      </ion-col>
-      <ion-col class="gender" size="6">
-        <div class="box-img">
-
-        </div>
-      </ion-col>
-    </ion-row>
+    <ion-text>
+      <h2 class="h2">Profil biologique</h2>
+    </ion-text>
+      <ion-row>
+        <ion-col class="gender-box" size="6">
+          <input type="radio" name="demo2" class="demo2 femme" id="femme" checked>
+          <label for="femme">Femme</label>
+        </ion-col>
+        <ion-col class="gender-box" size="6">
+          <input type="radio" name="demo2" class="demo2 homme" id="homme" >
+          <label for="homme">Homme</label>
+        </ion-col>
+      </ion-row>
+      <p class="note">Ces informations ont pour but d’améliorer les calculs par rapport à votre profil biologique</p>
   </ion-grid>
+
 </ion-content>
+
