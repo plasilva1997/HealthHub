@@ -6,14 +6,19 @@
   <div class="pannel">
     <div class="title-h1">
       <ion-text>
-        <h1 class="title-h1-resp">Heureux de vous revoir</h1>
+        <h1 class="title-h1-resp">Bienvenue parmis nous</h1>
       </ion-text>
     </div>
 
     <div class="form">
       <ion-item>
         <ion-label position="floating">Identifiant</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -21,12 +26,9 @@
         <ion-input type="password"></ion-input>
       </ion-item>
 
-      <p class="password-missing">Mot de passe oublié ?</p>
-
-
 
       <div class="btn-component">
-        <ion-button class="btn-bg-bgcolor" color="#088BBF" expand="block">Se connecter</ion-button>
+        <ion-button class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
 
         <div class="optionbtn">
           <div class="row-option"></div>
@@ -38,8 +40,9 @@
           <div class="row-option"></div>
         </div>
 
-        <ion-button routerLink="/register" class="btn-bg-trans" color="#088BBF" expand="block">Créer un compte</ion-button>
+        <ion-button routerLink="/login" class="btn-bg-trans" color="#088BBF" expand="block">Se Connecter</ion-button>
       </div>
+
     </div>
   </div>
 </ion-content>
