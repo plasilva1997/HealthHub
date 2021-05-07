@@ -1,15 +1,18 @@
-@font-face{
-  font-family: Junge sans-serif;
-  src: url("../assets/fonts/Junge-Regular.ttf");
+@font-face {
+  font-family: Nexa sans-serif;
+  src: url("../assets/fonts/NexaBold.otf");
   font-weight: normal;
   font-style: normal;
 }
-
-
+@font-face {
+  font-family: Nexa sans-serif;
+  src: url("../assets/fonts/NexaLight.otf");
+  font-weight: normal;
+  font-style: normal;
+}
 *{
   color: #FAFBEE;
 }
-
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 

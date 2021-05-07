@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
+    path: 'gender',
+    loadChildren: () => import('./pages/gender/gender.module').then(m => m.GenderPageModule)
+  },
+  {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
@@ -26,6 +30,11 @@ const routes: Routes = [
     path: 'stats',
     loadChildren: () => import('./pages/stats/stats.module').then( m => m.StatsPageModule)
   },
+  {
+    path: 'infos',
+    loadChildren: () => import('./pages/infos/infos.module').then(m => m.InfosPageModule)
+  },
+
 ];
 
 @NgModule({

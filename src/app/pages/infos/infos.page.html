@@ -1,0 +1,20 @@
+<ion-content>
+  <app-wave></app-wave>
+  <app-logo></app-logo>
+
+  <div class="title-h1">
+    <ion-text>
+      <h1 class="title-h1-resp">Vos informations</h1>
+    </ion-text>
+  </div>
+
+  <ion-item>
+    <ion-label>Date de naissance</ion-label>
+    <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
+  </ion-item>
+  <ion-content fullscreen class="ion-padding">
+    <ion-button expand="block" onclick="openPicker(defaultColumnOptions)">Show Single Column Picker</ion-button>
+    <ion-button expand="block" onclick="openPicker(2, 5, multiColumnOptions)">Show Multi Column Picker</ion-button>
+  </ion-content>
+</ion-content>
+
