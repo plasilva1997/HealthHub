@@ -19,18 +19,16 @@
 
         <ion-item>
           <ion-label position="floating">Email</ion-label>
-          <ion-input type="email"></ion-input>
+          <ion-input formControlName="email" type="email"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating">Mot de Passe</ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-input formControlName="password" type="password"></ion-input>
         </ion-item>
 
-
         <div class="btn-component">
-          <ion-button class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
-
+          <ion-button type="submit" [disabled]="!registerForm.valid" class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
           <div class="optionbtn">
             <div class="row-option"></div>
             <div class="text-option">
@@ -40,11 +38,10 @@
             </div>
             <div class="row-option"></div>
           </div>
-
           <ion-button routerLink="/login" class="btn-bg-trans" color="#088BBF" expand="block">Se Connecter</ion-button>
         </div>
 
-
+      </div>
+    </form>
     </div>
-  </div>
 </ion-content>

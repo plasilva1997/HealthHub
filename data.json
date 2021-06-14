@@ -1,0 +1,11 @@
+{
+  "adduser": [
+    {
+      "username": "test",
+      "email": "test@gmail.com",
+      "password": "skjdhq",
+      "createdAt": "2021-06-14T10:28:37.975Z",
+      "id": 1
+    }
+  ]
+}
