@@ -10,38 +10,40 @@
       </ion-text>
     </div>
 
-    <div class="form">
-      <ion-item>
-        <ion-label position="floating">Identifiant</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
+    <form [formGroup]="registerForm" (ngSubmit)="save()">
+      <div class="form">
+        <ion-item>
+          <ion-label position="floating">Identifiant</ion-label>
+          <ion-input formControlName="username" ></ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input type="email"></ion-input>
-      </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email"></ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Mot de Passe</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
+        <ion-item>
+          <ion-label position="floating">Mot de Passe</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
 
 
-      <div class="btn-component">
-        <ion-button class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
+        <div class="btn-component">
+          <ion-button class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
 
-        <div class="optionbtn">
-          <div class="row-option"></div>
-          <div class="text-option">
-            <ion-text>
-              <p class="text-option">OU</p>
-            </ion-text>
+          <div class="optionbtn">
+            <div class="row-option"></div>
+            <div class="text-option">
+              <ion-text>
+                <p class="text-option">OU</p>
+              </ion-text>
+            </div>
+            <div class="row-option"></div>
           </div>
-          <div class="row-option"></div>
+
+          <ion-button routerLink="/login" class="btn-bg-trans" color="#088BBF" expand="block">Se Connecter</ion-button>
         </div>
 
-        <ion-button routerLink="/login" class="btn-bg-trans" color="#088BBF" expand="block">Se Connecter</ion-button>
-      </div>
 
     </div>
   </div>
