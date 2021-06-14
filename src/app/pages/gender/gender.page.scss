@@ -1,0 +1,153 @@
+.title-h1 {
+  padding: 15px 15px 0 15px;
+  margin-top: 25vh;
+  font-size: 2em;
+}
+.button-box {
+  margin: 50px 0 30px 0;
+}
+.gender-box {
+  text-align: center;
+}
+input[type="radio"].demo2 {
+  display: none;
+}
+input[type="radio"].demo2 + label {
+  background: #303643;
+  color: #FAFBEE;
+  font-weight: 500;
+  font-size: 1.3em;
+  border-radius: 5px;
+  padding: 12px 30px;
+  border: solid 2px #088BBF;
+}
+input[type="radio"].demo2.femme:hover + label {
+  background-color: #303643;
+  border-color: #088BBF;
+}
+input[type="radio"].demo2.femme:checked + label {
+  background-color: #088BBF;
+  border-color: #088BBF;
+}
+input[type="radio"].demo2.homme:hover + label {
+  background-color: #303643;
+  border-color: #088BBF;
+}
+input[type="radio"].demo2.homme:checked + label {
+  background-color: #088BBF;
+  border-color: #088BBF;
+}
+.note {
+  position: relative;
+  color: #FAFBEE;
+  font-style: italic;
+  padding: 0 20px;
+  margin: 15px 0 0 0;
+  font-size: 1em;
+}
+.content-col-center {
+  text-align: center;
+}
+//iphone 5
+
+@media screen and (max-width: 320px){
+
+  .title-h1-resp{
+    margin-top: -3vh;
+    font-size: 1.2rem;
+  }
+
+  .password-missing{
+    font-size: 0.7rem;
+    margin-top: 5vh;
+
+  }
+
+  .form{
+    font-size: 1rem;
+  }
+
+}
+
+
+//Iphone 6-7-8
+
+@media screen and (min-width: 375px) {
+
+}
+
+//btn login register
+
+
+.btn-component{
+  position: fixed;
+  bottom: 5vh;
+  left: 50px;
+  right: 50px;
+}
+
+.btn-bg-bgcolor{
+  height: 5vh;
+  margin-top: 5vh;
+  background: #088BBF !important;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.btn-bg-bgcolor:hover{
+  background: #045879 !important;
+  transition: 0.5s;
+}
+
+.optionbtn{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-option{
+  color: white;
+  font-size: 0.8rem;
+}
+
+.row-option{
+  background: #088bbf50;
+  width: 40%;
+  height: 2px;
+}
+
+.btn-bg-trans{
+  height: 5vh;
+  border-radius: 5px;
+  background: transparent !important;
+  border: 2px solid #088BBF;
+  transition: 0.5s;
+}
+
+.btn-bg-trans:hover{
+  background: transparent !important;
+  border: 2px solid #045879;
+  transition: 0.5s;
+}
+
+//iphone 5
+
+@media screen and (max-width: 320px) {
+  .btn-bg-bgcolor{
+    height: 5vh;
+    margin-top: 3vh;
+    background: #088BBF !important;
+    transition: 0.5s;
+    border-radius: 5px;
+  }
+
+  .btn-bg-trans{
+    height: 5vh;
+    border-radius: 3px;
+    background: transparent !important;
+    border: 2px solid #088BBF;
+    transition: 0.5s;
+  }
+
+}
