@@ -6,6 +6,13 @@
       "password": "skjdhq",
       "createdAt": "2021-06-14T10:28:37.975Z",
       "id": 1
+    },
+    {
+      "username": "benji",
+      "email": "beji@test.com",
+      "password": "12345678p",
+      "createdAt": "2021-06-14T13:43:55.337Z",
+      "id": 2
     }
   ]
 }
