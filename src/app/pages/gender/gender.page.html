@@ -7,6 +7,7 @@
       <h1 class="title-h1-resp">Profil biologique</h1>
     </ion-text>
   </div>
+
   <ion-grid class="button-box">
     <ion-row>
       <ion-col class="gender-box" size="6">
@@ -26,13 +27,13 @@
   </ion-item>
 
   <ion-item>
-    <ion-button slot="end" (click)="editHeight()">Taille</ion-button>
+    <ion-label position="floating">Taille (Cm)</ion-label>
+    <ion-input type="number" maxlenght="270"></ion-input>
   </ion-item>
-
-  <ion-item button (click)="buttonClick()">
-    <ion-label>Poids</ion-label>
+  <ion-item>
+    <ion-label position="floating">Poids (Kg)</ion-label>
+    <ion-input type="number" maxlenght="680"></ion-input>
   </ion-item>
-
   <p class="note">Ces informations ont pour but d’améliorer les calculs par rapport à votre profil biologique</p>
 
   <div class="btn-component">

@@ -9,6 +9,8 @@ import { GenderPageRoutingModule } from './gender-routing.module';
 import { GenderPage } from './gender.page';
 import {SharedModule} from "../../shared/shared.module";
 
+
+
 @NgModule({
   imports: [
     CommonModule,

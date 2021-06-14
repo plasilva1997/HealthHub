@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PickerController} from '@ionic/angular';
+import {PickerOptions} from '@ionic/core';
 
 @Component({
   selector: 'app-gender',
@@ -8,40 +9,8 @@ import {PickerController} from '@ionic/angular';
 })
 export class GenderPage implements OnInit {
 
-  constructor(private pickerCtrl: PickerController) {
-  }
-  async editHeight() {
-    const picker = await this.pickerCtrl.create({
-      columns: [
-        {
-          name: 'Taille',
-          options: [
-            {text: '120', value: 120},
-            {text: '120', value:120},
-            {text: '120', value:120}
-          ]
-
-        }
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel'
-        },
-        {
-          text: 'Confirm',
-          handler: (value) => {
-            console.log(`Got Value ${value}`);
-          }
-        }
-      ]
-    });
-
-    await picker.present();
-  }
+  constructor(private pickerCtrl: PickerController) { }
 
   ngOnInit() {
   }
-
-
 }
