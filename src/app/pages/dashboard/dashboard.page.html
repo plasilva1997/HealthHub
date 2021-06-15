@@ -1,7 +1,78 @@
 <ion-content>
+  <app-logo></app-logo>
+
   <div class="panel">
     <div class="header">
+    </div>
+    <div class="infos">
+      <div class="infos-panel">
+        <div class="kcal-day">
+          <ion-label>120 / <span style="color: turquoise">1000Kcal</span></ion-label>
+        </div>
+        <div class="infos-eat">
+          <div class="stats">
+            <p>Glucides</p>
+            <p>55 / <span style="color: turquoise">200</span></p>
+          </div>
+          <div class="stats">
+            <p>Protéines</p>
+            <p>55 / <span style="color: turquoise">200</span></p>
+          </div>
+          <div class="stats">
+            <p>Lipides</p>
+            <p>55 / <span style="color: turquoise">200</span></p>
+          </div>
+        </div>
+      </div>
 
     </div>
+
+
+    <div class="values-input">
+      <div class="card">
+        <p>Ajouter un petit déjeuner</p>
+
+      </div>
+
+      <div class="card">
+        <p>Ajouter un déjeuner</p>
+
+      </div>
+
+      <div class="card">
+        <p>Ajouter un diner</p>
+
+      </div>
+
+      <div class="card">
+        <p>Ajouter un gouter</p>
+
+      </div>
+
+      <div class="card">
+        <p>Activité Physique</p>
+
+      </div>
+
+
+    </div>
+
   </div>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="light">
+      <ion-icon md="caret-back" ios="chevron-back-circle-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="start">
+      <ion-fab-button color="light">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="light">
+
+      </ion-fab-button>
+      <ion-fab-button color="light">
+        <ion-icon name="wine-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
