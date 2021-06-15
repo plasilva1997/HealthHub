@@ -26,6 +26,23 @@ const routes: Routes = [
     path: 'infos',
     loadChildren: () => import('./pages/infos/infos.module').then(m => m.InfosPageModule)
   },
+  {
+    path: 'imc',
+    loadChildren: () => import('./pages/imc/imc.module').then(m => m.ImcPageModule)
+  },  {
+    path: 'imc',
+    loadChildren: () => import('./pages/imc/imc.module').then( m => m.ImcPageModule)
+  },
+  {
+    path: 'tabac',
+    loadChildren: () => import('./pages/tabac/tabac.module').then( m => m.TabacPageModule)
+  },
+  {
+    path: 'alcool',
+    loadChildren: () => import('./pages/alcool/alcool.module').then( m => m.AlcoolPageModule)
+  },
+
+
 
 ];
 

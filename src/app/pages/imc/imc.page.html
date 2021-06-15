@@ -1,0 +1,57 @@
+<ion-content>
+  <app-wave></app-wave>
+  <app-logo></app-logo>
+
+  <div class="title-h1">
+    <ion-text>
+      <h1 class="title-h1-resp">Votre IMC</h1>
+    </ion-text>
+  </div>
+
+  <div class="box-imc-content">
+    <p class="imc-content">22</p>
+  </div>
+  <p class="notif-imc">D'après  l'interpétation de l'OMS ton IMC représente <span class="result-imc-oms">une corpulence normale</span>.</p>
+
+  <div class="title-h2">
+    <ion-text>
+      <h2 class="title-h2-resp">Votre objéctif</h2>
+    </ion-text>
+  </div>
+
+
+  <ion-grid class="button-box">
+    <ion-row>
+      <ion-col class="objectifs-box" size="6">
+        <input type="radio" name="demo2" class="demo2 perte" id="perte" checked>
+        <label for="perte">Perte de poids</label>
+      </ion-col>
+      <ion-col class="objectifs-box" size="6">
+        <input type="radio" name="demo2" class="demo2 gain" id="gain">
+        <label for="gain">Gain de poids</label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+      <ion-col class="objectifs-box col-maintien" size="8">
+        <input type="radio" name="demo2" class="demo2 maintien" id="maintien">
+        <label for="maintien">Maintien de poids</label>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="btn-component">
+    <ion-button routerLink="/info" class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
+
+    <div class="optionbtn">
+      <div class="row-option"></div>
+      <div class="text-option">
+        <ion-text>
+          <p class="text-option">OU</p>
+        </ion-text>
+      </div>
+      <div class="row-option"></div>
+    </div>
+
+    <ion-button routerLink="" class="btn-bg-trans" color="#088BBF" expand="block">Annuler</ion-button>
+  </div>
+</ion-content>
