@@ -5,6 +5,8 @@ import {WaveComponent} from '../components/wave/wave.component';
 import {LogoComponent} from '../components/logo/logo.component';
 import {IonicModule} from '@ionic/angular';
 import {RouterModule} from '@angular/router';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 
 const contents = [
@@ -17,7 +19,9 @@ const contents = [
   imports: [
     CommonModule,
     IonicModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    FormsModule
   ],
   exports: contents,
 })
