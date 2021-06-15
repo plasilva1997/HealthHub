@@ -1,0 +1,55 @@
+<ion-content>
+  <app-wave></app-wave>
+  <app-logo></app-logo>
+
+  <div class="title-h1">
+    <ion-text>
+      <h1 class="title-h1-resp">Profil biologique</h1>
+    </ion-text>
+  </div>
+  <ion-grid class="button-box">
+    <ion-row>
+      <ion-col class="gender-box" size="6">
+        <input type="radio" name="demo2" class="demo2 femme" id="femme" checked>
+        <label for="femme">Femme</label>
+      </ion-col>
+      <ion-col class="gender-box" size="6">
+        <input type="radio" name="demo2" class="demo2 homme" id="homme">
+        <label for="homme">Homme</label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item>
+    <ion-label>Date de naissance</ion-label>
+    <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-button slot="end" (click)="editHeight()">Taille</ion-button>
+  </ion-item>
+
+  <ion-item button (click)="buttonClick()">
+    <ion-label>Poids</ion-label>
+  </ion-item>
+
+  <p class="note">Ces informations ont pour but d’améliorer les calculs par rapport à votre profil biologique</p>
+
+  <div class="btn-component">
+    <ion-button routerLink="/info" class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
+
+    <div class="optionbtn">
+      <div class="row-option"></div>
+      <div class="text-option">
+        <ion-text>
+          <p class="text-option">OU</p>
+        </ion-text>
+      </div>
+      <div class="row-option"></div>
+    </div>
+
+    <ion-button routerLink="" class="btn-bg-trans" color="#088BBF" expand="block">Annuler</ion-button>
+  </div>
+
+</ion-content>
+

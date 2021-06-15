@@ -1,0 +1,91 @@
+$wave-color : #303643;
+
+.wave {
+  width: 1000px;
+  height: 1025px;
+  position: absolute;
+  top: -35%;
+  left: 50%;
+  margin-left: -500px;
+  margin-top: -550px;
+  border-radius: 35%;
+  background: $wave-color;
+  animation: wave 15s infinite linear;
+}
+
+@keyframes wave {
+  from { transform: rotate(0deg);}
+  from { transform: rotate(360deg);}
+}
+
+
+//iphone 5
+
+@media screen and (max-width: 320px){
+  .wave {
+    width: 1000px;
+    height: 1025px;
+    position: absolute;
+    top: -65%;
+    left: 50%;
+    margin-left: -500px;
+    margin-top: -550px;
+    border-radius: 35%;
+    background: $wave-color;
+    animation: wave 15s infinite linear;
+  }
+}
+
+
+//Iphone 6-7-8
+
+@media screen and (min-width: 375px){
+  .wave {
+    width: 1000px;
+    height: 1025px;
+    position: absolute;
+    top: -51%;
+    left: 50%;
+    margin-left: -500px;
+    margin-top: -550px;
+    border-radius: 35%;
+    background: $wave-color;
+    animation: wave 15s infinite linear;
+  }
+}
+
+
+//Iphone 6-7-8 plus
+
+@media screen and (min-width: 414px){
+  .wave {
+    width: 1000px;
+    height: 1025px;
+    position: absolute;
+    top: -44%;
+    left: 50%;
+    margin-left: -500px;
+    margin-top: -550px;
+    border-radius: 35%;
+    background: $wave-color;
+    animation: wave 15s infinite linear;
+  }
+}
+
+
+//Iphone x
+
+@media screen and (width: 375px) and (height: 812px){
+  .wave {
+    width: 1000px;
+    height: 1025px;
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    margin-left: -500px;
+    margin-top: -550px;
+    border-radius: 35%;
+    background: $wave-color;
+    animation: wave 15s infinite linear;
+  }
+}
