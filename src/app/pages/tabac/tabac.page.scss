@@ -1,12 +1,12 @@
-.title-h1 {
+.question-tabac {
   padding: 15px 15px 0 15px;
   margin-top: 25vh;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 .button-box {
   margin: 50px 0 30px 0;
 }
-.gender-box {
+.ouinon-box {
   text-align: center;
 }
 input[type="radio"].demo2 {
@@ -21,41 +21,38 @@ input[type="radio"].demo2 + label {
   padding: 12px 30px;
   border: solid 2px #088BBF;
 }
-input[type="radio"].demo2.femme:hover + label {
+input[type="radio"].demo2.oui:hover + label {
   background-color: #303643;
   border-color: #088BBF;
 }
-input[type="radio"].demo2.femme:checked + label {
+input[type="radio"].demo2.oui:checked + label {
   background-color: #088BBF;
   border-color: #088BBF;
 }
-input[type="radio"].demo2.homme:hover + label {
+input[type="radio"].demo2.non:hover + label {
   background-color: #303643;
   border-color: #088BBF;
 }
-input[type="radio"].demo2.homme:checked + label {
+input[type="radio"].demo2.non:checked + label {
   background-color: #088BBF;
   border-color: #088BBF;
 }
-.note {
-  position: relative;
-  color: #FAFBEE;
+.quantite-tabac {
+  padding: 15px 15px 0 15px;
+  font-size: 1.2em;
+  margin: 10px 0 0 0;
+}
+.quantite-tabac-note {
   font-style: italic;
-  padding: 0 20px;
-  margin: 15px 0 0 0;
-  font-size: 1em;
-}
-.content-col-center {
   text-align: center;
 }
-
 
 //btn login register
 
 
 .btn-component{
   position: fixed;
-  bottom: 5vh;
+  bottom: 10vh;
   left: 50px;
   right: 50px;
 }
@@ -108,47 +105,11 @@ input[type="radio"].demo2.homme:checked + label {
 //iphone 5
 
 @media screen and (max-width: 320px) {
-  .title-h1-resp{
-    margin-top: 0;
-    font-size: 1.2rem;
-  }
   .button-box {
-    margin: 5px 0 5px 0;
-  }
-  input[type="radio"].demo2 + label {
-    font-size: 1em;
-    padding: 8px 10px;
-  }
-  .picker-resp {
-    font-size: 1em;
-  }
-  .note {
-    font-size: 0.8em;
-    margin: 10px 0 0 0;
+    margin: 25px 0 10px 0;
   }
   .btn-component {
-    bottom: 0;
+    bottom: 2vh;
   }
-  .password-missing{
-    font-size: 0.7rem;
-    margin-top: 5vh;
-  }
-  .form{
-    font-size: 1rem;
-  }
-  .btn-bg-bgcolor{
-    height: 5vh;
-    margin-top: 3vh;
-    background: #088BBF !important;
-    transition: 0.5s;
-    border-radius: 5px;
-  }
-  .btn-bg-trans{
-    height: 5vh;
-    border-radius: 3px;
-    background: transparent !important;
-    border: 2px solid #088BBF;
-    transition: 0.5s;
-  }
-}
 
+}

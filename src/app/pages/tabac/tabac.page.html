@@ -1,0 +1,44 @@
+<ion-content>
+  <app-wave></app-wave>
+  <app-logo></app-logo>
+
+  <p class="question-tabac">Consommez-vous du tabac ?</p>
+
+  <ion-grid class="button-box">
+    <ion-row>
+      <ion-col class="ouinon-box" size="6">
+        <input type="radio" name="demo2" class="demo2 oui" id="oui" checked>
+        <label for="oui">Oui</label>
+      </ion-col>
+      <ion-col class="ouinon-box" size="6">
+        <input type="radio" name="demo2" class="demo2 non" id="non">
+        <label for="non">Non</label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <p class="quantite-tabac">Quantité / Jour</p>
+
+  <ion-range pin="true" min="0" max="10" step="1" snaps="true" color="secondary">
+    <ion-icon size="medium" slot="start" src="assets/img/cigarette_couleur.svg"></ion-icon>
+    <ion-icon size="large" slot="end" src="assets/img/paquet_de_cigarettes_couleur.svg"></ion-icon>
+  </ion-range>
+
+  <p class="quantite-tabac-note">1 = 1 cigarette</p>
+
+  <div class="btn-component">
+    <ion-button routerLink="/info" class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
+
+    <div class="optionbtn">
+      <div class="row-option"></div>
+      <div class="text-option">
+        <ion-text>
+          <p class="text-option">OU</p>
+        </ion-text>
+      </div>
+      <div class="row-option"></div>
+    </div>
+
+    <ion-button routerLink="" class="btn-bg-trans" color="#088BBF" expand="block">Annuler</ion-button>
+  </div>
+</ion-content>
