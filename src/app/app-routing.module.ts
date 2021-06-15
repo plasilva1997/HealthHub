@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {AuthGuard} from "./guards/services/user/auth.guard";
-import {AutoLoginGuard} from "./guards/services/user/auto-login.guard";
 
 const routes: Routes = [
   {
@@ -26,11 +25,11 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule),
     canLoad: [AuthGuard]
+
   },
   {
     path: 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule),
-    canLoad: [AuthGuard]
   },
   {
     path: 'stats',

@@ -10,12 +10,8 @@
       </ion-text>
     </div>
 
-    <form [formGroup]="registerForm" (ngSubmit)="save()">
+    <form [formGroup]="credentials" (ngSubmit)="register()">
       <div class="form">
-        <ion-item>
-          <ion-label position="floating">Identifiant</ion-label>
-          <ion-input formControlName="username" ></ion-input>
-        </ion-item>
 
         <ion-item>
           <ion-label position="floating">Email</ion-label>
@@ -28,7 +24,7 @@
         </ion-item>
 
         <div class="btn-component">
-          <ion-button type="submit" [disabled]="!registerForm.valid" class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
+          <ion-button type="submit" [disabled]="!credentials.valid" class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
           <div class="optionbtn">
             <div class="row-option"></div>
             <div class="text-option">

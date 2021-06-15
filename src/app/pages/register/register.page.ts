@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {CreateUserService} from "../../services/create-user.service";
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {RegisterModel} from "../../models/register.model";
 import {Router} from "@angular/router";
+import {AlertController, LoadingController} from "@ionic/angular";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-register',
@@ -11,46 +11,50 @@ import {Router} from "@angular/router";
 })
 export class RegisterPage implements OnInit {
 
-  private registerForm: FormGroup;
-
-
+  credentials: FormGroup;
 
   constructor(
-    public formBuilder: FormBuilder,
-    public userService: CreateUserService,
-    public router: Router
-  ) {}
+    private fb: FormBuilder,
+    private router: Router,
+    private alertController: AlertController,
+    private authService: AuthService,
+    private loadingController: LoadingController
+  ) {
+  }
 
   ngOnInit() {
-    this.buildForm();
-
-  }
-
-  buildForm(){
-    this.registerForm = this.formBuilder.group({
-      username: ['', [Validators.required]],
-      email: ['', [Validators.required]],
-      password: ['', [Validators.required]]
+    this.credentials = this.fb.group({
+      email: ['eve.holt@reqres.in', [Validators.required, Validators.email]],
+      password: ['pistol', [Validators.required, Validators.minLength(6)]],
     });
   }
 
-  save(){
-    if (!this.registerForm.valid) {
-      return;
-    }
+  async register() {
+    const loading = await this.loadingController.create();
+    await loading.present();
 
-    const values = this.registerForm.value;
+    this.authService.register(this.credentials.value).subscribe(
+      async (res) => {
+        await loading.dismiss();
+        this.router.navigateByUrl('/login', {replaceUrl: true});
+      }, async (res) => {
+        await loading.dismiss();
+        const alert = await this.alertController.create({
+          header: 'Une erreur est produite',
+          message: res.error.error,
+          buttons: ['ok'],
+        });
 
+        await alert.present();
+      }
+    )
+  }
 
-    const user = new RegisterModel(
-      values['username'],
-      values['email'],
-      values['password'],
-      new Date()
-    );
+  get email() {
+    return this.credentials.get('email');
+  }
 
-    this.userService.add(user).subscribe((user) => {
-      this.router.navigate(['/login']);
-    });
+  get password() {
+    return this.credentials.get('password');
   }
 }
