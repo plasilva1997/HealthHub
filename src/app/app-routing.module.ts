@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import {AuthGuard} from "./guards/services/user/auth.guard";
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/home',
     pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
   },
   {
     path: 'login',
@@ -15,7 +18,6 @@ const routes: Routes = [
   {
     path: 'gender',
     loadChildren: () => import('./pages/gender/gender.module').then(m => m.GenderPageModule),
-    canLoad: [AuthGuard]
   },
   {
     path: 'register',
@@ -24,7 +26,6 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule),
-    canLoad: [AuthGuard]
 
   },
   {
@@ -34,12 +35,10 @@ const routes: Routes = [
   {
     path: 'stats',
     loadChildren: () => import('./pages/stats/stats.module').then( m => m.StatsPageModule),
-    canLoad: [AuthGuard]
   },
   {
     path: 'infos',
     loadChildren: () => import('./pages/infos/infos.module').then(m => m.InfosPageModule),
-    canLoad: [AuthGuard]
   },
     {
     path: 'imc',
@@ -57,6 +56,18 @@ const routes: Routes = [
     path: 'alcool',
     loadChildren: () => import('./pages/alcool/alcool.module').then( m => m.AlcoolPageModule)
   },
+  {
+    path: 'profil',
+    loadChildren: () => import('./pages/profil/profil.module').then( m => m.ProfilPageModule)
+  },  {
+    path: 'profil-save',
+    loadChildren: () => import('./pages/profil-save/profil-save.module').then( m => m.ProfilSavePageModule)
+  },
+  {
+    path: 'profil',
+    loadChildren: () => import('./pages/profil/profil.module').then( m => m.ProfilPageModule)
+  },
+
 ];
 
 @NgModule({

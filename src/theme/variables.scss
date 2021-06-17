@@ -13,6 +13,7 @@
 *{
   color: #FAFBEE;
 }
+
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
@@ -21,6 +22,9 @@
 
   --ion-font-family: 'Junge', sans-serif;
   font-family: var(--ion-font-family) !important;
+
+  --ion-border-color: #088BBF!important;
+
 
   /** primary **/
   --ion-color-primary: #3880ff;
