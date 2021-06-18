@@ -35,15 +35,14 @@
 .box-items {
   padding: 0 20px 0 0;
   position: relative;
-  top: 30vh;
+  top: 25vh;
 }
-
 //btn login register
 
 
 .btn-component{
   position: fixed;
-  bottom: 5vh;
+  bottom: 1vh;
   left: 50px;
   right: 50px;
 }
@@ -90,5 +89,15 @@
 .btn-bg-trans:hover{
   background: transparent !important;
   border: 2px solid #045879;
+  transition: 0.5s;
+}
+.btn-delete {
+  height: 5vh;
+  background: #8B0000 !important;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+.btn-delete:hover{
+  background: #FF0000 !important;
   transition: 0.5s;
 }

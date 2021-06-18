@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -59,13 +59,18 @@ const routes: Routes = [
   {
     path: 'profil',
     loadChildren: () => import('./pages/profil/profil.module').then( m => m.ProfilPageModule)
-  },  {
+  },
+  {
     path: 'profil-save',
     loadChildren: () => import('./pages/profil-save/profil-save.module').then( m => m.ProfilSavePageModule)
   },
   {
     path: 'profil',
     loadChildren: () => import('./pages/profil/profil.module').then( m => m.ProfilPageModule)
+  },
+  {
+    path: 'nap',
+    loadChildren: () => import('./pages/nap/nap.module').then( m => m.NapPageModule)
   },
 
 ];

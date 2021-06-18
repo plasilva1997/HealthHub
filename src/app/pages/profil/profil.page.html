@@ -35,21 +35,34 @@
           </ion-item>
         </div>
 
-      <div class="form">
-        <div class="btn-component">
-          <ion-button type="submit" class="btn-bg-bgcolor" color="#088BBF" expand="block">Enregistrer</ion-button>
-          <div class="optionbtn">
-            <div class="row-option"></div>
-            <div class="text-option">
-              <ion-text>
-                <p class="text-option">OU</p>
-              </ion-text>
-            </div>
-            <div class="row-option"></div>
-          </div>
-          <ion-button routerLink="/login" class="btn-bg-trans" color="#088BBF" expand="block">Supprimer compte</ion-button>
+        <div class="box-delete">
         </div>
-      </div>
+
+        <div class="form">
+          <div class="btn-component">
+            <ion-button type="submit" class="btn-bg-bgcolor" color="#088BBF" expand="block">Enregistrer</ion-button>
+            <div class="optionbtn">
+              <div class="row-option"></div>
+              <div class="text-option">
+                <ion-text>
+                  <p class="text-option">OU</p>
+                </ion-text>
+              </div>
+              <div class="row-option"></div>
+            </div>
+            <ion-button routerLink="/login" class="btn-bg-trans" color="#088BBF" expand="block">Modifier Mot de Passe</ion-button>
+            <div class="optionbtn">
+              <div class="row-option"></div>
+              <div class="text-option">
+                <ion-text>
+                  <p class="text-option">OU</p>
+                </ion-text>
+              </div>
+              <div class="row-option"></div>
+            </div>
+            <ion-button routerLink="/login" class="btn-delete" color="#088BBF" expand="block" (click)="openModal()">Supprimer Compte</ion-button>
+          </div>
+        </div>
     </form>
   </div>
 </ion-content>

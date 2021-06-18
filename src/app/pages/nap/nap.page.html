@@ -1,0 +1,52 @@
+<ion-content>
+  <app-wave></app-wave>
+  <app-logo></app-logo>
+
+  <div class="title-h1">
+    <ion-text>
+      <h1 class="title-h1-resp">Votre NAP</h1>
+    </ion-text>
+  </div>
+  <div class="nap-note">
+    <ion-text>
+      <p class="ion-no-margin">(Niveau d'activité physique)</p>
+    </ion-text>
+  </div>
+
+  <ion-list class="button-box" lines="none">
+      <ion-item class="choix-nap">
+        <input type="radio" name="demo2" class="demo2 sedentaire" id="sedentaire" checked>
+        <label for="sedentaire">Sédentaire</label>
+        <ion-icon size="large" slot="end" src="assets/img/point-dinterrogation.svg"></ion-icon>
+      </ion-item>
+      <ion-item class="choix-nap">
+        <input type="radio" name="demo2" class="demo2 actif" id="actif">
+        <label for="actif">Actif</label>
+        <ion-icon size="large" slot="end" src="assets/img/point-dinterrogation.svg"></ion-icon>
+      </ion-item>
+      <ion-item class="choix-nap">
+        <input type="radio" name="demo2" class="demo2 sportif" id="sportif">
+        <label for="sportif">Sportif</label>
+        <ion-button (click)="toastActionSedentaire()">
+          <ion-icon size="little" slot="end" src="assets/img/point-dinterrogation.svg"></ion-icon>
+        </ion-button>
+
+      </ion-item>
+  </ion-list>
+
+  <div class="btn-component">
+    <ion-button routerLink="/infos" class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
+
+    <div class="optionbtn">
+      <div class="row-option"></div>
+      <div class="text-option">
+        <ion-text>
+          <p class="text-option">OU</p>
+        </ion-text>
+      </div>
+      <div class="row-option"></div>
+    </div>
+
+    <ion-button routerLink="" class="btn-bg-trans" color="#088BBF" expand="block">Annuler</ion-button>
+  </div>
+</ion-content>
