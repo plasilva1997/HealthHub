@@ -17,20 +17,23 @@
       <ion-item class="choix-nap">
         <input type="radio" name="demo2" class="demo2 sedentaire" id="sedentaire" checked>
         <label for="sedentaire">Sédentaire</label>
-        <ion-icon size="large" slot="end" src="assets/img/point-dinterrogation.svg"></ion-icon>
+        <ion-button class="buttonNap" color="transparent" (click)="toastActionSedentaire()">
+          <ion-icon size="little" slot="end" src="assets/img/point-dinterrogation2.svg"></ion-icon>
+        </ion-button>
       </ion-item>
       <ion-item class="choix-nap">
         <input type="radio" name="demo2" class="demo2 actif" id="actif">
         <label for="actif">Actif</label>
-        <ion-icon size="large" slot="end" src="assets/img/point-dinterrogation.svg"></ion-icon>
+        <ion-button class="buttonNap" color="transparent" (click)="toastActionActif()">
+          <ion-icon size="little" slot="end" src="assets/img/point-dinterrogation2.svg"></ion-icon>
+        </ion-button>
       </ion-item>
       <ion-item class="choix-nap">
         <input type="radio" name="demo2" class="demo2 sportif" id="sportif">
         <label for="sportif">Sportif</label>
-        <ion-button (click)="toastActionSedentaire()">
-          <ion-icon size="little" slot="end" src="assets/img/point-dinterrogation.svg"></ion-icon>
-        </ion-button>
-
+          <ion-button class="buttonNap" color="transparent" (click)="toastActionSportif()">
+            <ion-icon size="little" slot="end" src="assets/img/point-dinterrogation2.svg"></ion-icon>
+          </ion-button>
       </ion-item>
   </ion-list>
 
