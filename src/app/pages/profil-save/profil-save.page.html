@@ -1,0 +1,55 @@
+<ion-content>
+  <div class="panel">
+    <div class="courbe">
+      <ion-button class="bouton-burger" color="#088BBF">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+    <div class="title-h2">
+      <ion-text>
+        <h2>Sauvegarder votre profil</h2>
+      </ion-text>
+    </div>
+  </div>
+
+  <form>
+    <div class="box-items">
+      <ion-item class="picker-resp">
+        <ion-label>Date de naissance</ion-label>
+        <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
+      </ion-item>
+
+      <ion-item class="picker-resp">
+        <ion-label position="floating">Taille (Cm)</ion-label>
+        <ion-input type="number" maxlenght="270" placeholder="170"></ion-input>
+      </ion-item>
+
+      <ion-item class="picker-resp">
+        <ion-label position="floating">Poids (Kg)</ion-label>
+        <ion-input type="number" maxlenght="680"></ion-input>
+      </ion-item>
+
+      <ion-item class="picker-resp">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" maxlenght="680"></ion-input>
+      </ion-item>
+    </div>
+
+    <div class="form">
+      <div class="btn-component">
+        <ion-button type="submit" class="btn-bg-bgcolor" color="#088BBF" expand="block">Enregistrer</ion-button>
+        <div class="optionbtn">
+          <div class="row-option"></div>
+          <div class="text-option">
+            <ion-text>
+              <p class="text-option">OU</p>
+            </ion-text>
+          </div>
+          <div class="row-option"></div>
+        </div>
+        <ion-button routerLink="/login" class="btn-bg-trans" color="#088BBF" expand="block">Annuler</ion-button>
+      </div>
+    </div>
+  </form>
+</ion-content>
