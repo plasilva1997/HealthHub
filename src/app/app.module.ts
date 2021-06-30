@@ -15,6 +15,7 @@ import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
 
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+import {UserService} from "./services/user.service";
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -36,7 +37,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AngularFirestoreModule,
     AngularFireAuthModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig)],
-  providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, NativeStorage],
+  providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, UserService,NativeStorage],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
