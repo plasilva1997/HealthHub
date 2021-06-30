@@ -9,9 +9,11 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 
 
+
 const contents = [
   WaveComponent,
-  LogoComponent
+  LogoComponent,
+
 ];
 
 @NgModule({
@@ -21,7 +23,7 @@ const contents = [
     IonicModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   exports: contents,
 })

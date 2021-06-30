@@ -1,0 +1,44 @@
+<ion-toolbar>
+  <ion-title>Suppression du compte</ion-title>
+  <ion-buttons slot="end">
+    <ion-button (click)="fermeModal()">
+      <ion-icon name="close-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+<ion-content>
+  <form>
+    <div class="box-items">
+      <ion-text>
+        <p class="text-supp">Etes vous sur de vouloir en arriver à de telles extrémités ?</p>
+      </ion-text>
+      <ion-item class="picker-resp">
+        <ion-label position="floating">Votre Email</ion-label>
+        <ion-input type="email" maxlenght="680" placeholder="john.doe@gmail.com"></ion-input>
+      </ion-item>
+
+      <ion-item class="picker-resp">
+        <ion-label position="floating">Mot de passe</ion-label>
+        <ion-input ></ion-input>
+      </ion-item>
+    </div>
+
+
+    <div class="form">
+      <div class="btn-component">
+        <ion-button (click)="fermeModal()" type="submit" class="btn-bg-bgcolor" color="#088BBF" expand="block">Annuler</ion-button>
+        <div class="optionbtn">
+          <div class="row-option"></div>
+          <div class="text-option">
+            <ion-text>
+              <p class="text-option">OU</p>
+            </ion-text>
+          </div>
+          <div class="row-option"></div>
+        </div>
+        <ion-button class="btn-delete" color="#088BBF" expand="block">Supprimer Compte</ion-button>
+      </div>
+    </div>
+  </form>
+
+</ion-content>

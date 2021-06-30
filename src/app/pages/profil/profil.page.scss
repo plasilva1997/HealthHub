@@ -1,0 +1,108 @@
+.panel {
+  position: relative;
+  width: 100%;
+}
+.courbe {
+  width: 375px;
+  height: 100px;
+  border: solid 2px #303643;
+  border-color: transparent transparent #303643 transparent;
+  background-color: #303643;
+  border-radius: 0 0 50% 50%;
+  zoom: 120%;
+  position: fixed;
+  right: -30px;
+  box-shadow: 0px 2px 18px 4px rgb(0 0 0 / 28%);
+  -webkit-box-shadow: 0px 2px 18px 4px rgb(0 0 0 / 28%);
+  -moz-box-shadow: 0px 2px 18px 4px rgb(0 0 0 / 28%);
+}
+.title-h2{
+  padding: 15px;
+  padding-bottom: 0;
+  font-size: 2em;
+  position: relative;
+  top: 20vh;
+}
+.bouton-burger {
+  color: transparent!important;
+  position: fixed;
+  left: 0;
+}
+.bouton-logout {
+  color: transparent!important;
+  position: fixed;
+  right: 0;
+}
+.box-infos {
+  position: relative;
+  top: 20vh;
+}
+.box-items {
+  padding: 0 20px 0 0;
+  position: relative;
+  top: 25vh;
+}
+//btn login register
+
+
+.btn-component{
+  position: fixed;
+  bottom: 1vh;
+  left: 50px;
+  right: 50px;
+}
+
+.btn-bg-bgcolor{
+  height: 5vh;
+  margin-top: 5vh;
+  background: #088BBF !important;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.btn-bg-bgcolor:hover{
+  background: #045879 !important;
+  transition: 0.5s;
+}
+
+.optionbtn{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-option{
+  color: white;
+  font-size: 0.8rem;
+}
+
+.row-option{
+  background: #088bbf50;
+  width: 40%;
+  height: 2px;
+}
+
+.btn-bg-trans{
+  height: 5vh;
+  border-radius: 5px;
+  background: transparent !important;
+  border: 2px solid #088BBF;
+  transition: 0.5s;
+}
+
+.btn-bg-trans:hover{
+  background: transparent !important;
+  border: 2px solid #045879;
+  transition: 0.5s;
+}
+.btn-delete {
+  height: 5vh;
+  background: #8B0000 !important;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+.btn-delete:hover{
+  background: #FF0000 !important;
+  transition: 0.5s;
+}

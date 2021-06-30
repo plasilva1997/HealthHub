@@ -13,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "5.2.11",
     "@angular/common": "~11.2.0",
     "@angular/core": "~11.2.0",
     "@angular/forms": "~11.2.0",
@@ -25,6 +26,7 @@
     "@ionic/angular": "^5.5.2",
     "cordova-plugin-nativestorage": "^2.3.2",
     "custom-maxlength": "0.0.4",
+    "ionic-tooltips": "^4.0.0-beta.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

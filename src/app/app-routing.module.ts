@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';;
 import {AuthGuard} from "./guard/auth.guard";
 
 const routes: Routes = [
@@ -49,6 +49,18 @@ const routes: Routes = [
   {
     path: 'alcool',
     loadChildren: () => import('./pages/alcool/alcool.module').then( m => m.AlcoolPageModule)
+  },
+  {
+    path: 'profil',
+    loadChildren: () => import('./pages/profil/profil.module').then( m => m.ProfilPageModule)
+  },
+  {
+    path: 'profil-save',
+    loadChildren: () => import('./pages/profil-save/profil-save.module').then( m => m.ProfilSavePageModule)
+  },
+  {
+    path: 'nap',
+    loadChildren: () => import('./pages/nap/nap.module').then( m => m.NapPageModule)
   },
   {
     path: 'login',
