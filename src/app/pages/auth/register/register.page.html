@@ -10,21 +10,26 @@
       </ion-text>
     </div>
 
-    <form  #form="ngForm" (ngSubmit)="register(form)" method="post">
+    <form>
       <div class="form">
 
         <ion-item>
           <ion-label position="floating">Email</ion-label>
-          <ion-input ngModel name="email" type="email"></ion-input>
+          <ion-input [(ngModel)]="email" name="email" type="email"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating">Mot de Passe</ion-label>
-          <ion-input ngModel name="password" type="password"></ion-input>
+          <ion-input [(ngModel)]="password" name="password" type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Confirmer mot de Passe</ion-label>
+          <ion-input [(ngModel)]="cpassword" name="cpassword" type="password"></ion-input>
         </ion-item>
 
         <div class="btn-component">
-          <ion-button type="submit" class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
+          <ion-button (click)="register()" class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
           <div class="optionbtn">
             <div class="row-option"></div>
             <div class="text-option">

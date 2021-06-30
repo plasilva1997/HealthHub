@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalController, NavController } from '@ionic/angular';
-import { AuthService } from 'src/app/services/auth.service';
-import { NgForm } from '@angular/forms';
-import { AlertService } from 'src/app/services/alert.service';
+import {Component, OnInit} from '@angular/core';
+import {AngularFireAuth} from "@angular/fire/auth";
+
 
 @Component({
   selector: 'app-register',
@@ -10,47 +8,29 @@ import { AlertService } from 'src/app/services/alert.service';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-  constructor(private modalController: ModalController,
-              private authService: AuthService,
-              private navCtrl: NavController,
-              private alertService: AlertService
-  ) { }
+
+  email: string = ''
+  password: string = ''
+  cpassword: string = ''
+
+  constructor(public afAuth: AngularFireAuth) {
+  }
+
   ngOnInit() {
   }
-  // Dismiss Register Modal
-  dismissRegister() {
-    this.modalController.dismiss();
-  }
-  // On Login button tap, dismiss Register modal and open login Modal
-  // async loginModal() {
-  //   this.dismissRegister();
-  //   const loginModal = await this.modalController.create({
-  //     component: LoginPage,
-  //   });
-  //   return await loginModal.present();
-  // }
-  register(form: NgForm) {
-    this.authService.register(form.value.email, form.value.password).subscribe(
-      data => {
-        this.authService.login(form.value.email, form.value.password).subscribe(
-          data => {
-          },
-          error => {
-            console.log(error);
-          },
-          () => {
-            this.dismissRegister();
-            this.navCtrl.navigateRoot('/dashboard');
-          }
-        );
-        this.alertService.presentToast(data['message']);
-      },
-      error => {
-        console.log(error);
-      },
-      () => {
 
-      }
-    );
+  async register() {
+    const {email, password, cpassword} = this
+    if (password !== cpassword) {
+      return console.error("les mots de passe ne sont pas égaux")
+    }
+
+    try {
+      const res = await this.afAuth.createUserWithEmailAndPassword(email, password)
+      console.log(res)
+    } catch (error) {
+      console.log(error)
+    }
   }
+
 }

@@ -8,9 +8,24 @@ import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from "@angular/common/http";
 import {NativeStorage} from "@ionic-native/native-storage/ngx";
 
-import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {firebaseConfig} from './credentials';
+
+import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
+
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+
+const firebaseUiAuthConfig: firebaseui.auth.Config = {
+  signInFlow: 'popup',
+  signInOptions: [
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+  ],
+  tosUrl: '/terms',
+  privacyPolicyUrl: '/privacy',
+  credentialHelper: firebaseui.auth.CredentialHelper.NONE,
+};
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +33,9 @@ import {firebaseConfig} from './credentials';
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule,],
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig)],
   providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, NativeStorage],
   bootstrap: [AppComponent],
 })

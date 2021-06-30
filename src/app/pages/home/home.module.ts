@@ -6,10 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import {RouterModule, Routes} from "@angular/router";
-import {RegisterPage} from "../auth/register/register.page";
-import {LoginPage} from "../auth/login/login.page";
 import {SharedModule} from "../../shared/shared.module";
-import {AppComponent} from "../../app.component";
 
 
 const routes: Routes = [
@@ -20,8 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [HomePage, LoginPage, RegisterPage],
-  entryComponents: [LoginPage, RegisterPage],
+  declarations: [HomePage],
   imports: [
     CommonModule,
     FormsModule,
