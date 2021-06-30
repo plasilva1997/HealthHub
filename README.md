@@ -27,4 +27,4 @@ For detailed explanation on how things work, check out [Ionic Docs](https://ioni
 
 [Yann Poher](https://github.com/poherYann)
 
-[Benjamin Plesant](https://github.com/bplesant)
+[Benjamin Plesant](https://github.com/Al-Namrood)
