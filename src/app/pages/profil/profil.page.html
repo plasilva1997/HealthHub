@@ -4,6 +4,9 @@
       <ion-button class="bouton-burger" color="#088BBF">
         <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
       </ion-button>
+      <ion-button class="bouton-logout" color="#088BBF">
+        <ion-icon slot="end" name="exit-outline"></ion-icon>
+      </ion-button>
     </div>
 
     <div class="title-h2">
@@ -35,9 +38,6 @@
           </ion-item>
         </div>
 
-        <div class="box-delete">
-        </div>
-
         <div class="form">
           <div class="btn-component">
             <ion-button type="submit" class="btn-bg-bgcolor" color="#088BBF" expand="block">Enregistrer</ion-button>
@@ -60,7 +60,7 @@
               </div>
               <div class="row-option"></div>
             </div>
-            <ion-button routerLink="/login" class="btn-delete" color="#088BBF" expand="block" (click)="openModal()">Supprimer Compte</ion-button>
+            <ion-button class="btn-delete" color="#088BBF" expand="block" (click)="openModal()">Supprimer Compte</ion-button>
           </div>
         </div>
     </form>

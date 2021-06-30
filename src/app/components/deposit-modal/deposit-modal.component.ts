@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {ModalController} from "@ionic/angular";
 
 @Component({
   selector: 'app-deposit-modal',
   templateUrl: './deposit-modal.component.html',
   styleUrls: ['./deposit-modal.component.scss'],
 })
-export class DepositModalComponent implements OnInit {
+export class DepositModalComponent {
 
-  constructor() { }
+  constructor(private modalCtrl: ModalController) { }
 
-  ngOnInit() {}
+  fermeModal() {
+    this.modalCtrl.dismiss();
+  }
 
 }

@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ProfilPageRoutingModule } from './profil-routing.module';
 
 import { ProfilPage } from './profil.page';
+import {DepositModalComponent} from "../../components/deposit-modal/deposit-modal.component";
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { ProfilPage } from './profil.page';
     IonicModule,
     ProfilPageRoutingModule
   ],
-  declarations: [ProfilPage]
+  declarations: [ProfilPage, DepositModalComponent],
+  entryComponents: [DepositModalComponent]
 })
 export class ProfilPageModule {}
