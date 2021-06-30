@@ -31,12 +31,16 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
     HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig)],
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
+  ],
   providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, UserService,NativeStorage],
   bootstrap: [AppComponent],
 })

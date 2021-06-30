@@ -17,11 +17,12 @@ export class RegisterPage implements OnInit {
   password: string = ''
   cpassword: string = ''
 
-  constructor(public afAuth: AngularFireAuth, public afstore: AngularFirestore,
-              public user: UserService,
-              public alertController: AlertController,
-              public router: Router) {
-  }
+  constructor(
+    public afAuth: AngularFireAuth,
+    public afstore: AngularFirestore,
+    public user: UserService,
+    public alertController: AlertController,
+    public router: Router) {  }
 
   ngOnInit() {
   }
@@ -53,8 +54,8 @@ export class RegisterPage implements OnInit {
         email,
         uid: res.user.uid
       })
-      this.presentAlert('Bravo', 'Tu est inscrit')
-      await this.router.navigate(['/tabs'])
+      await this.presentAlert('Bravo', 'Tu est inscrit')
+      await this.router.navigate(['/gender'])
     } catch (error) {
       console.log(error)
     }

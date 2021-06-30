@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
             email,
             uid: res.user.uid
           })
-        await this.router.navigate(['tabs/stats'])
+        await this.router.navigate(['tabs/stat'])
       }
 
     } catch (err) {
