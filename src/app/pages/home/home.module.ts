@@ -11,6 +11,7 @@ import {LoginPage} from "../auth/login/login.page";
 import {SharedModule} from "../../shared/shared.module";
 import {AppComponent} from "../../app.component";
 
+
 const routes: Routes = [
   {
     path: '',

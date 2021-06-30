@@ -34,7 +34,7 @@ export class AuthService {
     );
   }
   register(email: String, password: String) {
-    return this.http.post(this.env.API_URL + 'auth/register',
+    return this.http.post(this.env.API_URL + 'users/new',
       {email: email, password: password}
     )
   }

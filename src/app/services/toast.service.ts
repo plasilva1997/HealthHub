@@ -16,4 +16,11 @@ export class ToastService {
     });
     toast.present();
   }
+  async presentToastNap(infoMessage: string){
+    const toast = await this.toastController.create({
+      message: infoMessage,
+      duration: 8000
+    });
+    toast.present();
+  }
 }
