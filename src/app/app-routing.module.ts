@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';;
+import {AuthGuard} from "./guard/auth.guard";
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {
@@ -12,16 +13,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
   },
   {
-    path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
-  },
-  {
     path: 'gender',
     loadChildren: () => import('./pages/gender/gender.module').then(m => m.GenderPageModule),
-  },
-  {
-    path: 'register',
-    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule),
   },
   {
     path: 'dashboard',
@@ -31,6 +24,7 @@ const routes: Routes = [
   {
     path: 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule),
+    canActivate: [AuthGuard],
   },
   {
     path: 'stats',
@@ -65,19 +59,23 @@ const routes: Routes = [
     loadChildren: () => import('./pages/profil-save/profil-save.module').then( m => m.ProfilSavePageModule)
   },
   {
-    path: 'profil',
-    loadChildren: () => import('./pages/profil/profil.module').then( m => m.ProfilPageModule)
-  },
-  {
     path: 'nap',
     loadChildren: () => import('./pages/nap/nap.module').then( m => m.NapPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/auth/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/auth/register/register.module').then( m => m.RegisterPageModule)
   },
 
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })

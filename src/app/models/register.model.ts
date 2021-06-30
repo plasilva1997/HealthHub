@@ -1,10 +1,8 @@
 
 export class RegisterModel{
-  public id: number;
 
-  constructor(
-    public email: string,
-    public password: string,
-    public createdAt: Date
-  ){}
+  id: number;
+  email: string;
+  password: string;
+
 }
