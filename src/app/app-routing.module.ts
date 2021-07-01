@@ -67,7 +67,11 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./pages/auth/register/register.module').then(m => m.RegisterPageModule)
+  },  {
+    path: 'addimc',
+    loadChildren: () => import('./pages/addimc/addimc.module').then( m => m.AddimcPageModule)
   },
+
 
 ];
 

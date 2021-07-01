@@ -1,0 +1,36 @@
+<ion-content>
+  <app-wave></app-wave>
+  <app-logo></app-logo>
+
+  <div class="title-h1">
+    <ion-text>
+      <h1 class="title-h1-resp">Calculer IMC</h1>
+    </ion-text>
+  </div>
+  <ion-item class="picker-resp">
+    <ion-label position="floating">Taille (Cm)</ion-label>
+    <ion-input [(ngModel)]="taille" name="taille" type="number" maxlenght="270"></ion-input>
+  </ion-item>
+  <ion-item class="picker-resp">
+    <ion-label position="floating">Poids (Kg)</ion-label>
+    <ion-input [(ngModel)]="poids" name="poids" type="number" maxlenght="680"></ion-input>
+  </ion-item>
+  <script>
+
+    let date = new Date();
+
+    document.getElementById('date').value = date;
+  </script>
+  <ion-item>
+    <ion-textarea [(ngModel)]="note" name="note" placeholder="Entrez des notes... Ex: Date"></ion-textarea>
+  </ion-item>
+
+
+
+  <p class="note">Ces informations ont pour but d’améliorer les calculs par rapport à votre profil biologique</p>
+
+  <div class="btn-component">
+    <ion-button (click)="save()" class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
+
+  </div>
+</ion-content>

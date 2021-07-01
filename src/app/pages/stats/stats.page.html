@@ -3,14 +3,14 @@
   <div class="box-imc-content" *ngFor="let stat of (userImc | async)?.stats">
     <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>{{stat.imc}}</ion-card-subtitle>
+      <ion-card-subtitle>Calcul fait le {{stat.date_at}}</ion-card-subtitle>
       <ion-card-title>Votre IMC {{stat.imc}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p>Votre taille: {{stat.taille}}</p>
-      <p>Votre Poids: {{stat.poids}}</p>
+      <p>D'après l'interpétation de l'OMS cet IMC de {{stat.imc}} pour un poids de {{stat.poids}}kg d'une taille de {{stat.taille}}cm représente <span class="result-imc-oms">une corpulence normale</span>.</p>
       <br>
-      <p>D'après  l'interpétation de l'OMS ce IMC {{stat.imc}} représente <span class="result-imc-oms">une corpulence normale</span>.</p>
+      <h5 *ngIf="stat.note">Notes:</h5>
+      <p *ngIf="stat.note">{{stat.note}}</p>
     </ion-card-content>
   </ion-card>
       <p class="imc-content"></p>

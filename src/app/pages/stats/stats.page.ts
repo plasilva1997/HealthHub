@@ -13,7 +13,6 @@ export class StatsPage implements OnInit {
 
 
   constructor(private afs: AngularFirestore, private user: UserService) {
-    let data = {limit: "2"};
 
     const imc = afs.doc((`users/${user.getUID()}`))
     this.userImc = imc.valueChanges()
