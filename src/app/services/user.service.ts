@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 interface user{
   email: string,
   uid: string
+  imc: number
 }
 
 @Injectable()
@@ -18,5 +19,9 @@ export class UserService{
 
   getUID(){
     return this.user.uid
+  }
+
+  getImc(){
+    return this.user.imc
   }
 }

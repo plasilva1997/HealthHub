@@ -4,6 +4,7 @@ import {AngularFirestore} from "@angular/fire/firestore";
 import {UserService} from "../../services/user.service";
 import firebase from "firebase";
 import firestore = firebase.firestore;
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gender',
@@ -13,28 +14,37 @@ import firestore = firebase.firestore;
 export class GenderPage implements OnInit {
 
   // gender: boolean
-  day_birth: string
+  age: string
   taille: number
   poids: number
+  imc: number
 
-  constructor(private pickerCtrl: PickerController, public afstore: AngularFirestore, public user: UserService) { }
+  constructor(private pickerCtrl: PickerController, public afstore: AngularFirestore, public user: UserService, private router: Router) { }
 
   ngOnInit() {
   }
 
   async envoyer() {
     // const gender = this.gender
-    const day_birth = this.day_birth
+    const age = this.age
     const taille = this.taille
     const poids = this.poids
+    const imc = Math.round((poids * 10000) / (taille * taille) * 2) / 2 
 
-    this.afstore.doc(`users/${this.user.getUID()}`).update({
+    this.afstore.doc(`users/${this.user.getUID()}`)
+    .update({
       stats: firestore.FieldValue.arrayUnion({
         // gender,
-        day_birth,
+        age,
         taille,
-        poids
+        poids,
+        imc
       })
     })
+    .then(
+      () => {
+        this.router.navigateByUrl('imc')
+      }
+    )
   }
 }
