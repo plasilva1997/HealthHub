@@ -25,9 +25,8 @@
 
   <div class="box-items">
     <ion-item class="picker-resp">
-      <ion-label>Date de naissance</ion-label>
-      <ion-datetime [(ngModel)]="day_birth" name="day_birth" value="1990-02-19"
-                    placeholder="Select Date"></ion-datetime>
+      <ion-label position="floating">Age</ion-label>
+      <ion-input [(ngModel)]="age" name="age" type="number" maxlenght="270"></ion-input>
     </ion-item>
 
     <ion-item class="picker-resp">
@@ -43,8 +42,7 @@
   <p class="note">Ces informations ont pour but d’améliorer les calculs par rapport à votre profil biologique</p>
 
   <div class="btn-component">
-    <ion-button (click)="envoyer()" routerLink="/imc" class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant
-    </ion-button>
+    <ion-button (click)="envoyer()" class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
 
   </div>
 </ion-content>
