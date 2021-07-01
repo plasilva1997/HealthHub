@@ -8,10 +8,10 @@
     </ion-text>
   </div>
 
-  <div class="box-imc-content" *ngFor="let stat of (userImc | async)?.stats">
+  <div class="box-imc-content" *ngFor="let stat of (userImc | async)?.imc">
     <p class="imc-content">{{stat.imc}}</p>
   </div>
-  <p class="notif-imc">D'après  l'interpétation de l'OMS ton IMC représente <span class="result-imc-oms">une corpulence normale</span>.</p>
+  <p class="notif-imc">D'après l'interpétation de l'OMS ton IMC représente <span class="result-imc-oms">une corpulence normale</span>.</p>
 
   <div class="title-h2">
     <ion-text>

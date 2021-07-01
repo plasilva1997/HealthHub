@@ -1,20 +1,19 @@
 <ion-content>
 
-  <div class="box-imc-content" *ngFor="let stat of (userImc | async)?.stats">
-    <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Calcul fait le {{stat.date_at}}</ion-card-subtitle>
-      <ion-card-title>Votre IMC {{stat.imc}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>D'après l'interpétation de l'OMS cet IMC de {{stat.imc}} pour un poids de {{stat.poids}}kg d'une taille de {{stat.taille}}cm représente <span class="result-imc-oms">une corpulence normale</span>.</p>
-      <br>
-      <h5 *ngIf="stat.note">Notes:</h5>
-      <p *ngIf="stat.note">{{stat.note}}</p>
-    </ion-card-content>
-  </ion-card>
+  <div class="box-imc-content" *ngFor="let imcs of (userImc | async)?.imc">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Calcul fait le {{imcs.date_at}}</ion-card-subtitle>
+          <ion-card-title>Votre IMC {{imcs.imc}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>D'après l'interpétation de l'OMS cet IMC de {{imcs.imc}} pour un poids de {{imcs.poids}}kg d'une
+            taille de {{imcs.taille}}cm représente <span class="result-imc-oms">une corpulence normale</span>.</p>
+
+        </ion-card-content>
+      </ion-card>
       <p class="imc-content"></p>
-  </div>
+    </div>
 
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
     <ion-fab-button routerLink="/addimc" color="danger">

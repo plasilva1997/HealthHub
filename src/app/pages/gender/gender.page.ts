@@ -17,6 +17,8 @@ export class GenderPage implements OnInit {
   taille: number
   poids: number
   imc: number
+  date_at: string
+
 
   constructor(public afstore: AngularFirestore, public user: UserService, private router: Router) {
   }
@@ -30,16 +32,25 @@ export class GenderPage implements OnInit {
     const taille = this.taille
     const poids = this.poids
     const imc = Math.round((poids * 10000) / (taille * taille) * 2) / 2
+    const date_at = (new Date().toLocaleString());
+
 
     this.afstore.doc(`users/${this.user.getUID()}`).update({
-      stats: firestore.FieldValue.arrayUnion({
+      info: firestore.FieldValue.arrayUnion({
         gender,
-        age,
-        taille,
-        poids,
-        imc
+        age
       })
     })
+
+    this.afstore.doc(`users/${this.user.getUID()}`).update({
+      imc: firestore.FieldValue.arrayUnion({
+        imc,
+        taille,
+        poids,
+        date_at
+      })
+    })
+
       .then(
         () => {
           this.router.navigateByUrl('imc')

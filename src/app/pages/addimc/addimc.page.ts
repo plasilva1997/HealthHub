@@ -15,7 +15,6 @@ export class AddimcPage implements OnInit {
   poids: number
   imc: number
   date_at: string
-  note: string
 
   constructor(public afstore: AngularFirestore, public user: UserService, private router: Router) { }
 
@@ -27,17 +26,17 @@ export class AddimcPage implements OnInit {
     const poids = this.poids
     const imc = Math.round((poids * 10000) / (taille * taille) * 2) / 2
     const date_at = (new Date().toLocaleString());
-    const note = this.note
+
 
     this.afstore.doc(`users/${this.user.getUID()}`).update({
-      stats: firestore.FieldValue.arrayUnion({
+      imc: firestore.FieldValue.arrayUnion({
+        imc,
         taille,
         poids,
-        imc,
-        date_at,
-        note
+        date_at
       })
     })
+
       .then(
         () => {
           this.router.navigateByUrl('tabs/stat')
