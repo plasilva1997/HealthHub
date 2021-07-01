@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AngularFirestore} from "@angular/fire/firestore";
 import {UserService} from "../../services/user.service";
 import firebase from "firebase";
 import firestore = firebase.firestore;
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-gender',
@@ -13,13 +13,13 @@ import { Router } from '@angular/router';
 export class GenderPage implements OnInit {
 
   gender: boolean
-  day_birth: string
   age: string
   taille: number
   poids: number
   imc: number
 
-  constructor(public afstore: AngularFirestore, public user: UserService, private router: Router) { }
+  constructor(public afstore: AngularFirestore, public user: UserService, private router: Router) {
+  }
 
   ngOnInit() {
   }
@@ -40,10 +40,10 @@ export class GenderPage implements OnInit {
         imc
       })
     })
-    .then(
-      () => {
-        this.router.navigateByUrl('imc')
-      }
-    )
+      .then(
+        () => {
+          this.router.navigateByUrl('imc')
+        }
+      )
   }
 }
