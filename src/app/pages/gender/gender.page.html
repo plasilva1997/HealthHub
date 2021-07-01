@@ -8,17 +8,12 @@
     </ion-text>
   </div>
 
-  <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-around">
+
+
+  <div style="width: 100%; display: flex; flex-direction: row; justify-content: flex-start">
     <ion-item class="item-choise-gender">
-      <div style="margin-right: 25px">
-        <ion-label>Femme</ion-label>
-      </div>
-      <div>
-        <ion-toggle [(ngModel)]="gender" name="gender"></ion-toggle>
-      </div>
-      <div style="margin-left: 25px">
-        <ion-label>Homme</ion-label>
-      </div>
+        <ion-label>Femme / Homme</ion-label>
+      <ion-toggle slot="end" name="blueberry" [(ngModel)]="gender" checked></ion-toggle>
     </ion-item>
   </div>
 

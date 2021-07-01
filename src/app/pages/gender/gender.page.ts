@@ -13,7 +13,7 @@ import {Router} from '@angular/router';
 export class GenderPage implements OnInit {
 
   gender: boolean
-  age: string
+  age: number
   taille: number
   poids: number
   imc: number

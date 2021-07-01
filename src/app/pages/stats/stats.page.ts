@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AngularFirestore} from "@angular/fire/firestore";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'app-stats',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatsPage implements OnInit {
 
-  constructor() { }
+  userImc
+
+
+  constructor(private afs: AngularFirestore, private user: UserService) {
+    let data = {limit: "2"};
+
+    const imc = afs.doc((`users/${user.getUID()}`))
+    this.userImc = imc.valueChanges()
+  }
 
   ngOnInit() {
   }
