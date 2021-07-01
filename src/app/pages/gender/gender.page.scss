@@ -1,3 +1,19 @@
+
+ion-toggle {
+  --background: #7840ff;
+  --background-checked: #088bbf;
+  --handle-background: #252a35;
+  --handle-background-checked: rgb(37 42 53);
+}
+
+.item-choise-gender{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
 .title-h1 {
   padding: 15px 15px 0 15px;
   margin-top: 25vh;
