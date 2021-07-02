@@ -1,20 +1,27 @@
 <ion-content>
   <app-wave></app-wave>
-  <ion-grid>
-    <ion-text>
-      <h2 class="h2">Profil biologique</h2>
+  <app-logo></app-logo>
+
+  <div class="title-h1">
+    <ion-text class="title-h1-resp">
+      <h1>Bienvenue sur Elf.e</h1>
     </ion-text>
-    <ion-list>
-      <ion-row>
-        <ion-col class="gender-box" size="6">
-          <input type="radio" name="demo2" class="demo2 demoyes" id="demo2-a" checked>
-          <label for="demo2-a">Femme</label>
-        </ion-col>
-        <ion-col class="gender-box" size="6">
-          <input type="radio" name="demo2" class="demo2 demono" id="demo2-b">
-          <label for="demo2-b">Homme</label>
-        </ion-col>
-      </ion-row>
-    </ion-list>
-  </ion-grid>
+  </div>
+
+  <div class="btn-component">
+    <ion-button routerLink="/login" class="btn-bg-bgcolor" color="#088BBF" expand="block">Se connecter</ion-button>
+
+    <div class="optionbtn">
+      <div class="row-option"></div>
+      <div class="text-option">
+        <ion-text>
+          <p class="text-option">OU</p>
+        </ion-text>
+      </div>
+      <div class="row-option"></div>
+    </div>
+
+    <ion-button routerLink="/register" class="btn-bg-trans" color="#088BBF" expand="block">Créer un compte</ion-button>
+  </div>
+
 </ion-content>

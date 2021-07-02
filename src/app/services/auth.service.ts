@@ -1,69 +1,82 @@
-import {Injectable} from '@angular/core';
-
-import {Plugins} from '@capacitor/core';
-import {BehaviorSubject, from, Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
-import {map, switchMap, tap} from "rxjs/operators";
-
-const {Storage} = Plugins;
-const TOKEN_KEY = 'my-token';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { tap } from 'rxjs/operators';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { EnvService } from './env.service';
+import {RegisterModel} from "../models/register.model";
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  isAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
-  token = '';
-
-  constructor(private http: HttpClient) {
-    this.loadToken();
+  isLoggedIn = false;
+  token:any;
+  constructor(
+    private http: HttpClient,
+    private storage: NativeStorage,
+    private env: EnvService,
+  ) { }
+  login(email: String, password: String) {
+    return this.http.post(this.env.API_URL + 'auth/login',
+      {email: email, password: password}
+    ).pipe(
+      tap(token => {
+        this.storage.setItem('token', token)
+          .then(
+            () => {
+              console.log('Token Stored');
+            },
+            error => console.error('Error storing item', error)
+          );
+        this.token = token;
+        this.isLoggedIn = true;
+        return token;
+      }),
+    );
   }
-
-  //Function qui permet recuperer le token pour la connection
-  async loadToken() {
-    const token = await Storage.get({key: TOKEN_KEY});
-    if (token && token.value) {
-      console.log('set token :', token.value);
-      this.token = token.value;
-      this.isAuthenticated.next(true);
-    } else {
-      this.isAuthenticated.next(false);
-    }
-  }
-
-  //Function qui permet au utilizateur de se connecter
-  login(credentials: { email, password }): Observable<any> {
-    return this.http.post('https://reqres.in/api/login', credentials).pipe(
-      map((data: any) => data.token),
-      switchMap(token => {
-        return from(Storage.set({key: TOKEN_KEY, value: token}));
-      })
+  register(email: String, password: String) {
+    return this.http.post(this.env.API_URL + 'users/new',
+      {email: email, password: password}
     )
   }
-
-  //Function qui permet au utilizateur de se creér un compte
-  register(credentials: { email, password }): Observable<any> {
-    return this.http.post('https://reqres.in/api/register', credentials).pipe(
-      map((data: any) => data.token),
-      switchMap(token => {
-        return from(Storage.set({key: TOKEN_KEY, value: token}));
-      })
-    )
+  logout() {
+    const headers = new HttpHeaders({
+      'Authorization': this.token["token_type"]+" "+this.token["access_token"]
+    });
+    return this.http.get(this.env.API_URL + 'auth/logout', { headers: headers })
+      .pipe(
+        tap(data => {
+          this.storage.remove("token");
+          this.isLoggedIn = false;
+          delete this.token;
+          return data;
+        })
+      )
   }
-
-  //Function qui permet au utilizateur de se creér un compte
-  // delete(credentials: { email, password }): Observable<any> {
-  //   return this.http.delete('https://reqres.in/api/register', credentials).pipe(
-  //     map((data: any) => data.token),
-  //     switchMap(token => {
-  //       return from(Storage.set({key: TOKEN_KEY, value: token}));
-  //     })
-  //   )
-  // }
-
-  //Function qui permet au utilizateur de se déconnecter
-  logout(): Promise<void> {
-    this.isAuthenticated.next(false);
-    return Storage.remove({key: TOKEN_KEY});
+  user() {
+    const headers = new HttpHeaders({
+      'Authorization': this.token["token_type"]+" "+this.token["access_token"]
+    });
+    return this.http.get<RegisterModel>(this.env.API_URL + 'auth/user', { headers: headers })
+      .pipe(
+        tap(user => {
+          return user;
+        })
+      )
+  }
+  getToken() {
+    return this.storage.getItem('token').then(
+      data => {
+        this.token = data;
+        if(this.token != null) {
+          this.isLoggedIn=true;
+        } else {
+          this.isLoggedIn=false;
+        }
+      },
+      error => {
+        this.token = null;
+        this.isLoggedIn=false;
+      }
+    );
   }
 }

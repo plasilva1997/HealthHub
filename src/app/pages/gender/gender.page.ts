@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {PickerController} from '@ionic/angular';
+import {Component, OnInit} from '@angular/core';
+import {AngularFirestore} from "@angular/fire/firestore";
+import {UserService} from "../../services/user.service";
+import firebase from "firebase";
+import firestore = firebase.firestore;
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-gender',
@@ -8,40 +12,49 @@ import {PickerController} from '@ionic/angular';
 })
 export class GenderPage implements OnInit {
 
-  constructor(private pickerCtrl: PickerController) {
-  }
-  async editHeight() {
-    const picker = await this.pickerCtrl.create({
-      columns: [
-        {
-          name: 'Taille',
-          options: [
-            {text: '120', value: 120},
-            {text: '120', value:120},
-            {text: '120', value:120}
-          ]
+  gender: boolean
+  age: number
+  taille: number
+  poids: number
+  imc: number
+  date_at: string
 
-        }
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel'
-        },
-        {
-          text: 'Confirm',
-          handler: (value) => {
-            console.log(`Got Value ${value}`);
-          }
-        }
-      ]
-    });
 
-    await picker.present();
+  constructor(public afstore: AngularFirestore, public user: UserService, private router: Router) {
   }
 
   ngOnInit() {
   }
 
+  async envoyer() {
+    const gender = this.gender
+    const age = this.age
+    const taille = this.taille
+    const poids = this.poids
+    const imc = Math.round((poids * 10000) / (taille * taille) * 2) / 2
+    const date_at = (new Date().toLocaleString());
 
+
+    this.afstore.doc(`users/${this.user.getUID()}`).update({
+      info: firestore.FieldValue.arrayUnion({
+        gender,
+        age
+      })
+    })
+
+    this.afstore.doc(`users/${this.user.getUID()}`).update({
+      imc: firestore.FieldValue.arrayUnion({
+        imc,
+        taille,
+        poids,
+        date_at
+      })
+    })
+
+      .then(
+        () => {
+          this.router.navigateByUrl('imc')
+        }
+      )
+  }
 }
