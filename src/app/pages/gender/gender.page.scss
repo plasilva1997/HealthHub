@@ -1,3 +1,17 @@
+
+ion-toggle {
+  --background: #7840ff;
+  --background-checked: #088bbf;
+  --handle-background: #252a35;
+  --handle-background-checked: rgb(37 42 53);
+}
+
+.item-choise-gender{
+    width: 94%;
+    display: flex;
+    flex-direction: row;
+}
+
 .title-h1 {
   padding: 15px 15px 0 15px;
   margin-top: 25vh;
@@ -36,6 +50,9 @@ input[type="radio"].demo2.homme:hover + label {
 input[type="radio"].demo2.homme:checked + label {
   background-color: #088BBF;
   border-color: #088BBF;
+}
+.box-items {
+  padding: 0 20px 0 0;
 }
 .note {
   position: relative;

@@ -8,48 +8,37 @@
     </ion-text>
   </div>
 
-  <ion-grid class="button-box">
-    <ion-row>
-      <ion-col class="gender-box" size="6">
-        <input type="radio" name="demo2" class="demo2 femme" id="femme" checked>
-        <label for="femme">Femme</label>
-      </ion-col>
-      <ion-col class="gender-box" size="6">
-        <input type="radio" name="demo2" class="demo2 homme" id="homme">
-        <label for="homme">Homme</label>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
 
-  <ion-item class="picker-resp">
-    <ion-label>Date de naissance</ion-label>
-    <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
-  </ion-item>
 
-  <ion-item class="picker-resp">
-    <ion-label position="floating">Taille (Cm)</ion-label>
-    <ion-input type="number" maxlenght="270"></ion-input>
-  </ion-item>
-  <ion-item class="picker-resp">
-    <ion-label position="floating">Poids (Kg)</ion-label>
-    <ion-input type="number" maxlenght="680"></ion-input>
-  </ion-item>
+  <div style="width: 100%; display: flex; flex-direction: row; justify-content: flex-start">
+    <ion-item class="item-choise-gender">
+        <ion-label>Femme / Homme</ion-label>
+      <ion-toggle slot="end" name="blueberry" [(ngModel)]="gender" checked></ion-toggle>
+    </ion-item>
+  </div>
+
+
+  <div class="box-items">
+    <ion-item class="picker-resp">
+      <ion-label position="floating">Age</ion-label>
+      <ion-input [(ngModel)]="age" name="age" type="number" maxlenght="270"></ion-input>
+    </ion-item>
+
+    <ion-item class="picker-resp">
+      <ion-label position="floating">Taille (Cm)</ion-label>
+      <ion-input [(ngModel)]="taille" name="taille" type="number" maxlenght="270"></ion-input>
+    </ion-item>
+    <ion-item class="picker-resp">
+      <ion-label position="floating">Poids (Kg)</ion-label>
+      <ion-input [(ngModel)]="poids" name="poids" type="number" maxlenght="680"></ion-input>
+    </ion-item>
+  </div>
+
   <p class="note">Ces informations ont pour but d’améliorer les calculs par rapport à votre profil biologique</p>
 
   <div class="btn-component">
-    <ion-button routerLink="/info" class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
+    <ion-button (click)="envoyer()" class="btn-bg-bgcolor" color="#088BBF" expand="block">Suivant</ion-button>
 
-    <div class="optionbtn">
-      <div class="row-option"></div>
-      <div class="text-option">
-        <ion-text>
-          <p class="text-option">OU</p>
-        </ion-text>
-      </div>
-      <div class="row-option"></div>
-    </div>
-
-    <ion-button routerLink="" class="btn-bg-trans" color="#088BBF" expand="block">Annuler</ion-button>
   </div>
 </ion-content>
 
